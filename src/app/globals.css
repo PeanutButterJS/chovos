@@ -1,19 +1,10 @@
-html {
-  font-size: 10px;
-}
-* {
-  outline: none !important;
-}
-
-.transition {
-  transition: all 0.3s ease-in-out;
-}
+@layer reset, base, tokens, recipes, utilities;
 
 .material-symbols-outlined {
   overflow: hidden;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
-}
-
-.body {
-  background: white;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
