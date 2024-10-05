@@ -11,8 +11,29 @@ export const metadata: Metadata = {
   title: 'Chovos'
 };
 
+/* const header = css({
+  position: 'fixed',
+  top: 0,
+  zIndex: 3,
+  display: 'flex',
+  height: '80px',
+  width: '100%',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  backgroundColor: 'white',
+  padding: '10px 20px',
+  fontSize: '3rem',
+  fontWeight: 700,
+  color: 'token(colors.text.primary)',
+  boxShadow: '0 5px 20px rgba(0, 0, 0, 0.1)',
+  transition: 'all 0.3s ease-in-out',
+  '@media (max-width: 768px)': {
+    height: 30,
+    fontSize: '1.3rem'
+  }
+}); */
+
 const Header = styled.header`
-  padding: 0;
   position: fixed;
   top: 0;
   z-index: 3;
@@ -25,18 +46,25 @@ const Header = styled.header`
   padding: 10px 20px;
   font-size: 3rem;
   font-weight: 700;
-  color: black;
+  color: token(colors.text.primary);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   @media (max-width: 768px) {
-    height: 30px;
-    font-size: 1.3rem;
+    height: 50px;
+    font-size: 1.5rem;
   }
 `;
 
 const Main = styled.main`
-  padding-top: 60px;
-  min-height: calc(100vh);
+  position: relative;
+  top: 80px;
+  transition: all 0.3s ease-in-out;
+  min-height: calc(100vh - 80px);
+  padding: 15px;
+  @media (max-width: 768px) {
+    top: 50px;
+    min-height: calc(100vh - 50px);
+  }
 `;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
