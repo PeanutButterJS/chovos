@@ -8,5 +8,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       clientSecret: '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'
     })
   ],
-  secret: 'W7ZsMWBWFAwrtM3/lV6/pRrYISfTjdyV3ife2a5a8+E=' // ran this online openssl rand -base64 32
+  secret: process.env.NEXT_PUBLIC_SECRET // ran this online openssl rand -base64 32
 });
