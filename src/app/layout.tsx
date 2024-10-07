@@ -1,37 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type { Metadata } from 'next';
 import { Rubik } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import { styled } from '../../styled-system/jsx';
+import AuthSection from './auth-section';
 
 const rubik = Rubik({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Chovos'
 };
-
-/* const header = css({
-  position: 'fixed',
-  top: 0,
-  zIndex: 3,
-  display: 'flex',
-  height: '80px',
-  width: '100%',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  backgroundColor: 'white',
-  padding: '10px 20px',
-  fontSize: '3rem',
-  fontWeight: 700,
-  color: 'token(colors.text.primary)',
-  boxShadow: '0 5px 20px rgba(0, 0, 0, 0.1)',
-  transition: 'all 0.3s ease-in-out',
-  '@media (max-width: 768px)': {
-    height: 30,
-    fontSize: '1.3rem'
-  }
-}); */
 
 const Header = styled.header`
   position: fixed;
@@ -79,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`body ${rubik.className}`}>
         <Header className="header">
           <Link href="/">Chovos</Link>
+          <AuthSection />
         </Header>
         <Main className="main">{children}</Main>
       </body>

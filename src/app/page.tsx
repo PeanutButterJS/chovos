@@ -1,3 +1,7 @@
+import { auth } from '../../auth';
+
 export default function Home() {
-  return <div>this is where it will happen</div>;
+  auth().then((a) => console.log(a));
+
+  return <div>its here</div>;
 }
